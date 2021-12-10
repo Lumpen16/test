@@ -1,0 +1,15 @@
+<div class="list_container">
+  <div class="tab_container">
+    <div *ngFor="let type of ['Income', 'Outcome', 'Loans', 'Investments']" on-click="this.tab = getTabByType(type)"  class="tab_container_item" routerLink="/navigator" [queryParams]="{tab: getTabByType(type)}" > {{ type }} </div>
+  </div>
+  <div class="data_container">
+    <div class="data_legend">
+      <div class="text-center" style="width: 100%">Name</div>
+      <div class="text-center" style="width: 100%">Amount</div>
+    </div>
+    <div class="data_item" *ngFor="let dataItem of getDataByType(this.tab)">
+      <div class="text-center" style="width: 100%">{{ dataItem.name.first + ' ' + dataItem.name.last}}</div>
+      <div class="text-center" style="width: 100%">{{ dataItem.amount.includes('floating') ? getRandomForDataItem() : dataItem.amount }}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="summary-container">
+  <div class="card" style="width: 30vw; margin: auto; margin-bottom: 10px">
+    <div class="card-header"></div>
+    <div class="card-body">
+      <h5 class="card-title welcome">Welcome</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content</p>
+      <a routerLinkActive="active" routerLink="/navigator" [queryParams]="{tab: '0'}" class="btn btn-primary btn-welcome">See transactions</a>
+    </div>
+    <div class="card-footer">You have {{ data.length }} transactions</div>
+  </div>
+
+
+  <div class="cards">
+    <div class="card"  *ngFor="let type of ['Income', 'Investment', 'Outcome', 'Loan']">
+      <div class="card-body">
+        <h5 class="card-title">{{ this.getCountByType(type) }}</h5>
+        <p class="card-text">{{ (type == 'Income' || type == 'Outcome') ? type: type + 's' }}</p>
+        <a routerLink="/navigator" [queryParams]="{tab: getTab(type)}" class="btn btn-primary" style="color: white">See all</a>
+      </div>
+    </div>
+  </div>
+</div>

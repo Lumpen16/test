@@ -1,0 +1,32 @@
+.cards {
+  width: 30vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+app-summary {
+  margin: auto;
+}
+.summary-container {
+  margin-top: 30%;
+}
+.welcome {
+  text-align: center;
+}
+.btn-welcome {
+  float: none
+}
+
+
+.card-footer {
+  text-align: center;
+}
+/*.cards {*/
+/*  display: grid;*/
+/*  grid-template-columns: 1fr 1fr;*/
+/*  grid-gap: 20px;*/
+/*  column-gap: 20px;*/
+/*  row-gap: 20px;*/
+/*}*/
